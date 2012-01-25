@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require File.expand_path("../../lib/mc_starter", __FILE__)
+
+McStarter.start!(:port => 27015, :nick => 'gay', :server_name => 'gay_server')
