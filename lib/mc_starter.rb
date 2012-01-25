@@ -14,7 +14,7 @@ module McStarter
     # Složka s pluginy
     server_plugins_dir = File.join(server_dir, 'plugins')
     # NoLagg soubor
-    no_lagg_file = File.join(server_plugins_dir, 'NoLagg.amxx')
+    no_lagg_file = File.join(server_plugins_dir, 'NoLagg.jar')
     # Složka pro zálohy
     backup_dir = File.join(home_dir, 'backups')
     # Složka serveru v zálohách
@@ -61,10 +61,10 @@ module McStarter
     # zmenime prava : chown -R 777 /home/hosting/servery/$port/plugins
     FileUtils.chmod_R(0777, server_plugins_dir)
 
-    # zmenime prava : chown -R 444 /home/hosting/servery/$port/plugins/NoLagg.amxx
+    # zmenime prava : chown -R 444 /home/hosting/servery/$port/plugins/NoLagg.jar
     File.chmod(0444, no_lagg_file)
 
-    # zmenime prava : chmod ruby:ruby /home/hosting/servery/$port/plugins/NoLagg.amxx
+    # zmenime prava : chmod ruby:ruby /home/hosting/servery/$port/plugins/NoLagg.jar
     `chown #{user}:#{user} #{no_lagg_file}`
 
     # pokud něco nedopadne uplně nejlíp, tak to prostě všechno smažeme
